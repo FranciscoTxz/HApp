@@ -13,4 +13,6 @@
     <color name="red">#FF0000</color>
     <color name="blue">#0037FF</color>
     <color name="green">#44FF00</color>
+
+    <color name="transparent">#00FF0000</color>
 </resources>
