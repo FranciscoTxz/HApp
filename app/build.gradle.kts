@@ -17,7 +17,9 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner =
+//            "androidx.test.runner.AndroidJUnitRunner" //When you don't use dagger hilt
+        testInstrumentationRunner = "com.samaxz.horoscapp.CustomTestRunner"
     }
 
     buildTypes {
@@ -88,4 +90,18 @@ dependencies {
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.view)
     implementation(libs.androidx.camera.extensions)
+
+    //UnitTest
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlintest.runner.junit5)
+    testImplementation(libs.mockk)
+
+    //UITesting
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.google.hilt.android.testing)
+    androidTestImplementation(libs.androidx.fragment.testing)
+    kaptAndroidTest(libs.hilt.android.compiler)
 }
